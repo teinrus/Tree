@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.TreeSet;
+import java.util.*;
 
 public class PersonCompare<P> implements Comparator<Person> {
     int maxSize;
@@ -13,8 +10,8 @@ public class PersonCompare<P> implements Comparator<Person> {
     @Override
     public int compare(Person o1, Person o2) {
 
-        TreeSet<String> text = new TreeSet<>(List.of(o1.getSurname().split("\\P{IsAlphabetic}+")));
-        TreeSet<String> text2 = new TreeSet<>(List.of(o2.getSurname().split("\\P{IsAlphabetic}+")));
+        List<String> text = new LinkedList<>(List.of(o1.getSurname().split("\\P{IsAlphabetic}+")));
+        List<String> text2 = new LinkedList<>(List.of(o2.getSurname().split("\\P{IsAlphabetic}+")));
 
 
         if (text.size() < maxSize || text2.size() < maxSize) {

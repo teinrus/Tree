@@ -1,11 +1,9 @@
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        List<Person> person = new ArrayList<>();
+        LinkedList<Person> person = new LinkedList<>();
 
         person.add(new Person("Vany", "Aramov", 12));
         person.add(new Person("Vany", "Ivanov", 12));
