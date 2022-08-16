@@ -10,14 +10,14 @@ public class PersonCompare<P extends Person> implements Comparator<P> {
 
     @Override
     public int compare(P o1, P o2) {
-        List<String> text = new LinkedList<>(List.of(o1.getSurname().split("\\P{IsAlphabetic}+")));
-        List<String> text2 = new LinkedList<>(List.of(o2.getSurname().split("\\P{IsAlphabetic}+")));
 
-
-        if (text.size() <= maxSize || text2.size() <= maxSize) {
-            if (text.size() > text2.size()) {
+        if (o1.getSurname().split("\\P{IsAlphabetic}+").length<=maxSize||
+                o2.getSurname().split("\\P{IsAlphabetic}+").length<=maxSize) {
+            if (o1.getSurname().split("\\P{IsAlphabetic}+").length >
+                    o2.getSurname().split("\\P{IsAlphabetic}+").length) {
                 return -1;
-            } else if (text.size() < text2.size()) {
+            } else if (o1.getSurname().split("\\P{IsAlphabetic}+").length <
+                    o2.getSurname().split("\\P{IsAlphabetic}+").length) {
                 return 1;
             }
         }
