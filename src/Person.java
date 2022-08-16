@@ -12,7 +12,7 @@ public class Person {
 
     }
 
-    public String getName() {
+    public <P> String getName() {
         return name;
     }
 
@@ -20,7 +20,7 @@ public class Person {
         this.name = name;
     }
 
-    public String getSurname() {
+    public <P>  String getSurname() {
         return surname;
     }
 
