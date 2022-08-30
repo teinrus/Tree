@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Comparator;
 
 public class PersonCompare<P extends Person> implements Comparator<P> {
     int maxSize;
@@ -28,5 +28,10 @@ public class PersonCompare<P extends Person> implements Comparator<P> {
         }
         return 0;
 
+    }
+
+
+    public static boolean checkAge(Person person) {
+        return person.getAge() < 18;
     }
 }
