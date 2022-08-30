@@ -12,13 +12,16 @@ public class Main {
         person.add(new Person("Pety", "Petror Ogli ibn Ivanov", 2));
         person.add(new Person("Artut", "Abdurov ogli ibn", 3));
 
-        Collections.sort(person, new PersonCompare<Person>(5));
+        Collections.sort(person, new PersonCompare<>(5));
         System.out.println(person);
 
-        Collections.sort(person, new PersonCompare<Person>(2));
+        Collections.sort(person, new PersonCompare<>(2));
         System.out.println(person);
 
-        Predicate<Person> personPredicate = PersonCompare::checkAge;
+        Predicate<Person> personPredicate = (Person pers) -> {
+            return pers.getAge() < 18;
+        };
+
         person.removeIf(personPredicate);
         System.out.println(person);
     }

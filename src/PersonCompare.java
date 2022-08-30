@@ -31,7 +31,4 @@ public class PersonCompare<P extends Person> implements Comparator<P> {
     }
 
 
-    public static boolean checkAge(Person person) {
-        return person.getAge() < 18;
-    }
 }
