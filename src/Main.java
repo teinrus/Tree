@@ -18,9 +18,7 @@ public class Main {
         Collections.sort(person, new PersonCompare<>(2));
         System.out.println(person);
 
-        Predicate<Person> personPredicate = (Person pers) -> {
-            return pers.getAge() < 18;
-        };
+        Predicate<Person> personPredicate = pers -> pers.getAge() < 18;
 
         person.removeIf(personPredicate);
         System.out.println(person);
